@@ -1,0 +1,13 @@
+<div class="container">
+  <a ui-sref="home">Home</a> &lt;
+  <a ui-sref="notes">Notes</a> &lt;
+  <h2> View Note </h2>
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
+      <div ng-repeat="note in notedetail.notes | filter:notedetail.noteId">
+        <h2>{{note.title}}</h2>
+        <p>{{note.content}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <h2> Todo List</h2>
+  <div class="row" id="todoadd">
+    <input type="text" ng-model="todo.taskName" placeholder="Add Todo Task">
+    <button ng-click="todo.addTask();">Add Task</button>
+  </div>
+  <div class="row" id="listtodo">
+    <div class="col-md-9">
+      <h4>Tasks todo:</h4>
+      <div ng-repeat="task in todo.tasks">
+          <div class="col-md-8">
+            <input type="checkbox" ng-model="task.done">
+            <span ng-bind="task.name"></span>
+          </div>
+          <div class="col-md-1">
+            <button ng-click="todo.removeTask($index);">X</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p><button ng-click="todo.removeMarked()">Remove Tasks Done</button></p>
+  </div>
+</div>

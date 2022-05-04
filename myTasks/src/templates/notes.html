@@ -1,0 +1,56 @@
+<div class="container">
+  <h2> Notes </h2>
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
+      <form name="noteForm" novalidate>
+        <input name="title" type="text" placeholder="Title"
+          ng-model="eznote.title"
+          ng-maxlength="50">
+          <span ng-if="noteForm.title.$error.maxlength && noteForm.title.$touched">
+            Last name must not be longer than 50 characters
+          </span>
+          <br>
+
+        <textarea name="content" type="text" placeholder="Add your content here"
+          ng-model="eznote.content"
+          required
+          minlength="1"
+          mg-maxlength="500"
+          cols="40" rows="10">
+        </textarea>
+  <!--      <span
+          ng-if="(noteForm.content.$error.minlength || noteForm.content.$error.required) && noteForm.content.$touched">
+          Content must be at least a character long
+        </span>
+        <span ng-if="noteForm.content.$error.maxlength && noteForm.content.$touched">
+          Cannot cannot be longer than 500 characters
+        </span>
+-->
+        <div class="center">
+          <button name="save" class="btn-save" ng-disabled="noteForm.$invalid" ng-click="eznote.addNote()">Save</button>
+          <button name="clear" class="btn-clear" ng-click="eznote.clearNote()">Clear</button>
+          <!--<span></span>-->
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      {{eznote.addMesg}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3" ng-repeat="note in eznote.notes">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">{{note.title}}</p>
+          <p class="card-text">
+            {{ note.content | truncate }}
+          </p>
+          <div class="text-center">
+            <button class="btn-view" ui-sref="noteDetail({id: note.noteId})">View</button>
+            <button class="btn-delete" ng-click="eznote.deleteNote($index)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

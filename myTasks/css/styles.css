@@ -1,0 +1,208 @@
+body {
+  font-size: 16px;
+  background-color: #ffffcc; /*#fefbd8;*/
+  font-family: 'Oxygen', sans-serif;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color: #618685;
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-brand {
+  padding-top: 25px;
+}
+.navbar-brand h1 { /* Restaurant name */
+  font-family: 'Arial', serif;
+  color: #fccb1a;
+  font-size: 1.5em;
+  /* text-transform: uppercase;*/
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+.navbar-brand p { /* Kosher cert */
+  color: #000;
+  text-transform: uppercase;
+  font-size: .7em;
+  margin-top: 15px;
+}
+.navbar-brand p span { /* Star-K */
+  vertical-align: middle;
+}
+
+#nav-list {
+  margin-top: 10px;
+}
+#nav-list a {
+  color: #f6b319;
+  text-align: center;
+}
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+#nav-list a span {
+  font-size: 1.8em;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #61122f;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+}
+/* END HEADER */
+
+.container .jumbotron {
+  background-color: inherit;
+  padding: 0;
+}
+
+#note-tile, #todo-tile, #shopping-tile {
+  height: 180px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  /*border: 2px solid #3F0C1F;*/
+  overflow: hidden;
+}
+#note-tile:hover, #todo-tile:hover, #shopping-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+#note-tile {
+  background: url('../images/note_tile.png') no-repeat;
+  background-position: center;
+}
+#todo-tile {
+  background: url('../images/todo_tile.png') no-repeat;
+  background-position: center;
+}
+#shopping-tile {
+  background: url('../images/shopping_tile.png') no-repeat;
+  background-position: center;
+}
+#note-tile span, #todo-tile span, #shopping-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  /*font-size: 1.6em;
+  text-transform: uppercase;
+  background-color: #000;*/
+  color: #000;
+  font-weight: bold; 
+  opacity: .8;
+}
+/* END HOME PAGE */
+
+.btn-save:disabled, [type="submit"]:disabled, button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-save {
+  background: #556b2f;
+  color: #FFF;
+  border-radius: 4px;
+}
+
+.btn-clear {
+  background: #b76161;
+  color: #FFF;
+  border-radius: 4px;
+}
+.btn-view {
+  background: #556b2f;
+  color: #FFF;
+  border-radius: 4px;
+  font-size: small;
+}
+.btn-delete {
+  background: #556b2f;
+  color: #FFF;
+  border-radius: 4px;
+  font-size: small;
+}
+
+.card {
+  background: #FFF none repeat scroll 0% 0%;
+  border: 0.1rem solid #EFEFEF;
+  border-radius: 0.5rem;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+  z-index: 999;
+  padding: 1.5rem 1.5rem 0px;
+  margin-top: 20px;
+}
+
+.card .card-title {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  margin-top: 0px;
+}
+
+.card .card-text {
+  font-size: small;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.card .card-body {
+  margin-top: 5px;
+}
+
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  /* Header */
+  .navbar-brand {
+    padding-top: 10px;
+    height: 80px;
+  }
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 10px;
+    font-size: 5vw; /* 1vw = 1% of viewport width */
+  }
+  .navbar-brand p { /* Kosher cert */
+    font-size: .6em;
+    margin-top: 12px;
+  }
+  .navbar-brand p img { /* Star-K */
+    height: 20px;
+  }
+
+  #collapsable-nav a { /* Collapsed nav menu text */
+    font-size: 1.2em;
+  }
+  #collapsable-nav a span { /* Collapsed nav menu glyph */
+    font-size: 1em;
+    margin-right: 5px;
+  }
+
+  /* End Header */
+
+}
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 479px) {
+  /* Header */
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 5px;
+    font-size: 6vw;
+  }
+  /* End Header */
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>myTasks</title>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body ng-app="myTasks">
+
+    <header>
+      <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="navbar-brand">
+              <a href="index.html"><h1>myTasks</h1></a>
+            </div>
+
+            <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div id="collapsable-nav" class="collapse navbar-collapse">
+            <ul id="nav-list" class="nav navbar-nav navbar-right">
+              <li id="navHomeButton" class="visible-xs">
+                <a href="index.html">
+                  <span class="glyphicon glyphicon-home"></span> Home</a>
+              </li>
+              <li id="navNotesButton" ui-sref-active="active">
+                <a ui-sref="notes">
+                  <span class="glyphicon glyphicon-th"></span><br class="hidden-xs"> Notes</a>
+              </li>
+              <li>
+                <a ui-sref="todo">
+                  <span class="glyphicon glyphicon-th-list"></span><br class="hidden-xs"> ToDo</a>
+              </li>
+              <li>
+                <a ui-sref="shoppinglist">
+                  <span class="glyphicon glyphicon-list-alt"></span><br class="hidden-xs"> Shopping List</a>
+              </li>
+            </ul><!-- #nav-list -->
+          </div><!-- .collapse .navbar-collapse -->
+        </div><!-- .container -->
+      </nav><!-- #header-nav -->
+    </header>
+
+    <ui-view></ui-view>
+
+
+  <!-- Libraries -->
+  <script src="lib/jquery-2.1.4.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.0/angular-local-storage.min.js"></script>
+
+  <!-- Modules -->
+  <script src="src/mytasks.module.js"></script>
+
+  <!-- Routes -->
+  <script src="src/routes.js"></script>
+
+  <!-- Module Artifacts -->
+  <script src="src/notes/notes.controller.js"></script>
+  <script src="src/notes/notedetail.controller.js"></script>
+  <script src="src/notes/notes.service.js"></script>
+  <script src="src/shoppinglist/shoppinglist.controller.js"></script>
+  <script src="src/shoppinglist/shoppinglist.service.js"></script>
+  <script src="src/todo/todo.controller.js"></script>
+  <script src="src/todo/todo.service.js"></script>
+
+  </body>
+</html>
